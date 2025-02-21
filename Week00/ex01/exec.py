@@ -1,4 +1,4 @@
-import sys
+from sys import argv
 
 def formatter(input):
     if input.isupper():
@@ -6,11 +6,11 @@ def formatter(input):
     else:
         print(input.upper(), end="")
 
-i = len(sys.argv) - 1
+i = len(argv) - 1
 while i > 0:
-    j = len(sys.argv[i]) - 1
+    j = len(argv[i]) - 1
     while j >= 0:
-        formatter(sys.argv[i][j])
+        formatter(argv[i][j])
         j -= 1
     i -= 1
     print(' ', end="")
