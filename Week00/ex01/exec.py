@@ -1,10 +1,12 @@
 from sys import argv
 
+
 def formatter(input):
     if input.isupper():
         print(input.lower(), end="")
     else:
         print(input.upper(), end="")
+
 
 i = len(argv) - 1
 while i > 0:

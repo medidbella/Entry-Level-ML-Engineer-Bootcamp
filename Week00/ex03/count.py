@@ -1,6 +1,7 @@
 from sys import argv, stdin, stderr, exit
 from string import punctuation
 
+
 class Data:
     printableChars = 0
     upperChars = 0
@@ -8,7 +9,9 @@ class Data:
     punctuationChars = 0
     spaces = 0
 
+
 myData = Data()
+
 
 def counter(character):
     if character.isprintable():
@@ -22,7 +25,8 @@ def counter(character):
     if character in punctuation:
         myData.punctuationChars += 1
 
-def text_analyzer(text = None):
+
+def text_analyzer(text=None):
     '''This function counts the number of upper characters, lower characters,
 punctuation and spaces in a given text.'''
     if not text:
@@ -35,6 +39,7 @@ punctuation and spaces in a given text.'''
     print(f" - {myData.lowerChars} lower letter(s)")
     print(f" - {myData.upperChars} punctuation mark(s)")
     print(f" - {myData.spaces} space(s)")
+
 
 if __name__ == "__main__":
     if len(argv) > 2:
