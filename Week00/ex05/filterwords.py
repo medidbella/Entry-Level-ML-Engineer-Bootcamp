@@ -24,8 +24,6 @@ for char in argv[1]:
 	else:
 		input[index] += char
 
-for word in input:
-	if len(word) > length:
-		output.append(word)
+output = [word for word in input if len(word) > length]
 
 print(output)
