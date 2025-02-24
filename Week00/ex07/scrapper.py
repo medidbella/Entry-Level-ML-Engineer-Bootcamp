@@ -1,5 +1,12 @@
+from bs4 import BeautifulSoup
 import requests
 
-response = requests.get("https://data.1337ai.org/")
+pageUrl = "https://data.1337ai.org/"
+response = requests.get(pageUrl)
+rawData = BeautifulSoup(response.text, 'html.parser')
+rows = rawData.find_all("th")
 
-print (type(response))
+rowsText = []
+for elm in rows:
+    rowsText.append(str(elm).replace("<th>", "").replace("</th>", ""))
+print(rowsText)
