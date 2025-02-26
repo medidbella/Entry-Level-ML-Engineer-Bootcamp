@@ -19,8 +19,8 @@ while index < keysNumber:
     if index != keysNumber - 1:
         csvFile.write(", ")
     index += 1
-index = 0
 csvFile.write('\n')
+index = 0
 
 
 while index < len(Values):

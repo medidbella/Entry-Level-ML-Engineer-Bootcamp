@@ -5,36 +5,36 @@ from sys import stdout, exit
 progressBarLen = 26
 
 
-def progress_visualizer(iteration, elapsedTime, iterationsNumber):
-    progress = iteration / iterationsNumber * 100
+def progress_visualizer(currentIteration, elapsedTime, iterationsNumber):
+    progress = currentIteration / iterationsNumber * 100
     if progress == 0:
         return
-    progressChars = progress / 100 * progressBarLen
+    progressCharacters = progress / 100 * progressBarLen
     ETA = (elapsedTime / progress * 100) - elapsedTime
-    bar = ('=' * int(progressChars - 1) +
+    bar = ('=' * int(progressCharacters - 1) +
            ('>' if progress < 100 else '=')).ljust((progressBarLen), ' ')
     print(f"ETA: {ETA:.2f}s [{int(progress):3}%][{bar}]", end='')
-    print(f"{iteration}/{iterationsNumber} | elapsed time {elapsedTime:.2f}s",
+    print(f"{currentIteration}/{iterationsNumber} | elapsed time {elapsedTime:.2f}s",
           end='\r')
 
 
 def ft_progress(lst):
-    iteration = 1
+    currentIteration = 1
     t0 = time()
     iterationsNumber = len(lst)
 
     for elm in lst:
         elapsedTime = time() - t0
         yield elm
-        progress_visualizer(iteration, elapsedTime, iterationsNumber)
-        iteration += 1
+        progress_visualizer(currentIteration, elapsedTime, iterationsNumber)
+        currentIteration += 1
 
 
-tab = range(1000)
+tab = range(1337)
 
 number = 0
 for elm in ft_progress(tab):
     number += elm
-    sleep(0.01)
+    sleep(0.001)
 print()
 print(number)
