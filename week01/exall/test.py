@@ -16,3 +16,4 @@ db = db.drop_duplicates()
 
 sbrn.heatmap([db["price"] [db["stories"]]])
 plt.show()
+ 
